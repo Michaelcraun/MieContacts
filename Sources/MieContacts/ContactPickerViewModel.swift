@@ -19,6 +19,8 @@ public class ContactPickerViewModel: ObservableObject {
         self.contacts = ContactService.shared.fetch()
         self.contactList = ContactService.shared.group(contacts)
         
+        ContactService.shared.requestPermission()
+        
     }
     
     func search(text: String) {
