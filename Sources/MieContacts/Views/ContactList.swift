@@ -9,9 +9,9 @@ import SwiftUI
 
 public struct ContactList: View {
     
-    @State var contactGroups: [ContactGroup]
-    let allowsMultiSelect: Bool
-    let onSelect: (Contact) -> Void
+    @State public var contactGroups: [ContactGroup]
+    public let allowsMultiSelect: Bool
+    public let onSelect: (Contact) -> Void
     
     public var body: some View {
     

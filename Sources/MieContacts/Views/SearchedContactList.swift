@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct SearchedContactList: View {
+public struct SearchedContactList: View {
     
-    let contacts: [SearchedContact]
-    let allowsMultiSelect: Bool
-    let onSelect: (Contact) -> Void
+    public let contacts: [SearchedContact]
+    public let allowsMultiSelect: Bool
+    public let onSelect: (Contact) -> Void
     
-    var body: some View {
+    public var body: some View {
     
         List(contacts) { searched in
             

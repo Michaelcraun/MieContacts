@@ -253,17 +253,17 @@ extension Contact: Equatable {
     
 }
 
-struct ContactGroup: Identifiable {
+public struct ContactGroup: Identifiable {
     
-    let contacts: [Contact]
-    let id: String
+    public let contacts: [Contact]
+    public let id: String
     
 }
 
-struct SearchedContact: Identifiable, Equatable {
+public struct SearchedContact: Identifiable, Equatable {
     
-    let contact: Contact
-    let id: String = UUID().uuidString
-    let text: String
+    public let contact: Contact
+    public let id: String = UUID().uuidString
+    public let text: String
     
 }
