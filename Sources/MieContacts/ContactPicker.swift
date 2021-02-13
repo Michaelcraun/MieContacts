@@ -11,8 +11,8 @@ import Contacts
 /// - TODO: Add option to view contact before choosing, if selecting singular contact
 public struct ContactPicker: View {
     
-    typealias ContactSelected = (Contact) -> Void
-    typealias ContactsSelected = ([Contact]) -> Void
+    public typealias ContactSelected = (Contact) -> Void
+    public typealias ContactsSelected = ([Contact]) -> Void
     
     @Environment(\.presentationMode) private var presentationMode
     @ObservedObject private var model: ContactPickerViewModel
@@ -77,7 +77,7 @@ public struct ContactPicker: View {
         
     }
     
-    init(model: ContactPickerViewModel = ContactPickerViewModel(), onSelectContact: ContactSelected? = nil, onSelectContacts: ContactsSelected? = nil) {
+    public init(model: ContactPickerViewModel = ContactPickerViewModel(), onSelectContact: ContactSelected? = nil, onSelectContacts: ContactsSelected? = nil) {
         
         self.model = model
         self.onContactSelected = onSelectContact

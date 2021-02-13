@@ -11,7 +11,7 @@ import UIKit
 import Contacts
 
 @available(iOS 14, *)
-struct Contact: Identifiable {
+public struct Contact: Identifiable {
     
     typealias ContactRelation = (label: String, relation: CNContactRelation)
     typealias ContactDate = (label: String, date: Date)
@@ -24,7 +24,7 @@ struct Contact: Identifiable {
     
     private let contact: CNContact?
     
-    let id: UUID = UUID()
+    public let id: UUID = UUID()
     
     var birthday: Date? {
         return contact?.birthday?.date
@@ -247,7 +247,7 @@ struct Contact: Identifiable {
 
 extension Contact: Equatable {
     
-    static func == (lhs: Contact, rhs: Contact) -> Bool {
+    public static func == (lhs: Contact, rhs: Contact) -> Bool {
         return lhs.contact == rhs.contact
     }
     

@@ -8,13 +8,13 @@
 import Foundation
 import SwiftUI
 
-class ContactPickerViewModel: ObservableObject {
+public class ContactPickerViewModel: ObservableObject {
     
     @Published var contactList: [ContactGroup] = []
     @Published var contacts: [Contact] = []
     @Published var searchedContacts: [SearchedContact] = []
     
-    init() {
+    public init() {
         
         self.contacts = ContactService.shared.fetch()
         self.contactList = ContactService.shared.group(contacts)
