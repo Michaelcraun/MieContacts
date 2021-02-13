@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct ContactList: View {
+public struct ContactList: View {
     
     @State var contactGroups: [ContactGroup]
     let allowsMultiSelect: Bool
     let onSelect: (Contact) -> Void
     
-    var body: some View {
+    public var body: some View {
     
         List {
             

@@ -8,7 +8,7 @@
 import SwiftUI
 import Contacts
 
-struct ContactCell: View {
+public struct ContactCell: View {
     
     typealias OnSelect = (Contact) -> Void
     
@@ -30,7 +30,7 @@ struct ContactCell: View {
     var displaysImage: Bool = false
     let onSelect: OnSelect
     
-    var body: some View {
+    public var body: some View {
     
         HStack {
             

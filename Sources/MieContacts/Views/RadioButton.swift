@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct RadioButton: View {
+public struct RadioButton: View {
     
     @Binding var isSelected: Bool
     
-    var body: some View {
+    public var body: some View {
         
         if isSelected {
             
