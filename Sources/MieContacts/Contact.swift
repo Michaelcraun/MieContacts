@@ -13,111 +13,111 @@ import Contacts
 @available(iOS 14, *)
 public struct Contact: Identifiable {
     
-    typealias ContactRelation = (label: String, relation: CNContactRelation)
-    typealias ContactDate = (label: String, date: Date)
-    typealias ContactEmailAddress = (label: String, address: String)
-    typealias ContactInstantMessageAddress = (label: String, address: CNInstantMessageAddress)
-    typealias ContactPhoneNumber = (label: String, phoneNumber: CNPhoneNumber)
-    typealias ContactPostalAddress = (label: String, address: CNPostalAddress)
-    typealias ContactSocialProfile = (label: String, profile: CNSocialProfile)
-    typealias ContactURLAddress = (label: String, address: String)
+    public typealias ContactRelation = (label: String, relation: CNContactRelation)
+    public typealias ContactDate = (label: String, date: Date)
+    public typealias ContactEmailAddress = (label: String, address: String)
+    public typealias ContactInstantMessageAddress = (label: String, address: CNInstantMessageAddress)
+    public typealias ContactPhoneNumber = (label: String, phoneNumber: CNPhoneNumber)
+    public typealias ContactPostalAddress = (label: String, address: CNPostalAddress)
+    public typealias ContactSocialProfile = (label: String, profile: CNSocialProfile)
+    public typealias ContactURLAddress = (label: String, address: String)
     
     private let contact: CNContact?
     
     public let id: UUID = UUID()
     
-    var birthday: Date? {
+    public var birthday: Date? {
         return contact?.birthday?.date
     }
-    var contactRelations: [ContactRelation] {
+    public var contactRelations: [ContactRelation] {
         return (contact?.contactRelations ?? []).map { ($0.label ?? "Unknown", $0.value)}
     }
-    var contactType: CNContactType {
+    public var contactType: CNContactType {
         return contact?.contactType ?? .person
     }
-    var dates: [ContactDate] {
+    public var dates: [ContactDate] {
         return (contact?.dates ?? []).map { ($0.label ?? "Unknown", $0.value.date ?? Date() )}
     }
-    var departmentName: String {
+    public var departmentName: String {
         return contact?.departmentName ?? ""
     }
-    var emailAddresses: [ContactEmailAddress] {
+    public var emailAddresses: [ContactEmailAddress] {
         return (contact?.emailAddresses ?? []).map { ($0.label ?? "Unknown", String($0.value))}
     }
-    var familyName: String {
+    public var familyName: String {
         return contact?.familyName ?? "Contact"
     }
-    var givenName: String {
+    public var givenName: String {
         return contact?.givenName ?? "Unknown"
     }
-    var identifier: String {
+    public var identifier: String {
         return contact?.identifier ?? ""
     }
-    var image: UIImage {
+    public var image: UIImage {
         if let data = imageData, imageDataAvailable {
             return UIImage(data: data) ?? UIImage()
         } else {
             return UIImage(systemName: "person.fill") ?? UIImage()
         }
     }
-    var imageData: Data? {
+    public var imageData: Data? {
         return contact?.imageData
     }
-    var imageDataAvailable: Bool {
+    public var imageDataAvailable: Bool {
         return contact?.imageDataAvailable ?? false
     }
-    var instantMessageAddresses: [ContactInstantMessageAddress] {
+    public var instantMessageAddresses: [ContactInstantMessageAddress] {
         return (contact?.instantMessageAddresses ?? []).map { ($0.label ?? "Unkown", $0.value)}
     }
-    var jobTitle: String {
+    public var jobTitle: String {
         return contact?.jobTitle ?? ""
     }
-    var middleName: String {
+    public var middleName: String {
         return contact?.middleName ?? ""
     }
-    var namePrefix: String {
+    public var namePrefix: String {
         return contact?.namePrefix ?? ""
     }
-    var nameSuffix: String {
+    public var nameSuffix: String {
         return contact?.nameSuffix ?? ""
     }
-    var nickname: String {
+    public var nickname: String {
         return contact?.nickname ?? ""
     }
-    var nonGregorianBirthday: Date? {
+    public var nonGregorianBirthday: Date? {
         return contact?.nonGregorianBirthday?.date
     }
-    var organizationName: String {
+    public var organizationName: String {
         return contact?.organizationName ?? ""
     }
-    var phoneNumbers: [ContactPhoneNumber] {
+    public var phoneNumbers: [ContactPhoneNumber] {
         return (contact?.phoneNumbers ?? []).map { ($0.label ?? "Unknown", $0.value)}
     }
-    var phoneticFamilyName: String {
+    public var phoneticFamilyName: String {
         return contact?.phoneticFamilyName ?? ""
     }
-    var phoneticGivenName: String {
+    public var phoneticGivenName: String {
         return contact?.phoneticGivenName ?? ""
     }
-    var phoneticMiddleName: String {
+    public var phoneticMiddleName: String {
         return contact?.phoneticMiddleName ?? ""
     }
-    var phoneticOrganzationName: String {
+    public var phoneticOrganzationName: String {
         return contact?.phoneticOrganizationName ?? ""
     }
-    var postalAddresses: [ContactPostalAddress] {
+    public var postalAddresses: [ContactPostalAddress] {
         return (contact?.postalAddresses ?? []).map { ($0.label ?? "Unkown", $0.value) }
     }
-    var previousFamilyName: String {
+    public var previousFamilyName: String {
         return contact?.previousFamilyName ?? ""
     }
-    var socialProfiles: [ContactSocialProfile] {
+    public var socialProfiles: [ContactSocialProfile] {
         return (contact?.socialProfiles ?? []).map { ($0.label ?? "Unknown", $0.value) }
     }
-    var thumbnailImageData: Data? {
+    public var thumbnailImageData: Data? {
         return contact?.thumbnailImageData
     }
-    var urlAddresses: [ContactURLAddress] {
+    public var urlAddresses: [ContactURLAddress] {
         return (contact?.urlAddresses ?? []).map { ($0.label ?? "Unknown", String($0.value)) }
     }
     
