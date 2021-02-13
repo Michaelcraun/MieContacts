@@ -14,7 +14,7 @@ fileprivate protocol ContactKeyEnabled {
 
 public class ContactService {
     
-    static let shared = ContactService()
+    public static let shared = ContactService()
     
     private var contactStore: CNContactStore?
     
