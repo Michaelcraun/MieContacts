@@ -8,7 +8,7 @@ MieContacts is a tool that provides a more SwiftUI-like way to allow a user to s
 3. [Assistance](#assistance)
     1. [Bug Reports](#bugs)
     2. [Pull Requests](#pr)
-4. [Future](#futute)
+4. [Future](#future)
 5. [License](#license)
 
 ## Restrictions <a name="restrictions" />
