@@ -12,7 +12,7 @@ fileprivate protocol ContactKeyEnabled {
     var descriptor: CNKeyDescriptor { get }
 }
 
-class ContactService {
+public class ContactService {
     
     static let shared = ContactService()
     
@@ -24,7 +24,7 @@ class ContactService {
         
     }
     
-    func fetch(with keys: [Key] = Key.allCases) -> [Contact] {
+    public func fetch(with keys: [Key] = Key.allCases) -> [Contact] {
         
         do {
             
@@ -48,7 +48,7 @@ class ContactService {
         
     }
     
-    func requestPermission() {
+    public func requestPermission() {
         
         contactStore = CNContactStore()
         contactStore?.requestAccess(for: .contacts, completionHandler: { success, error in
@@ -66,7 +66,7 @@ class ContactService {
         
     }
 
-    enum Key: String, ContactKeyEnabled, CaseIterable {
+    public enum Key: String, ContactKeyEnabled, CaseIterable {
 
         // Contact Identification
         case identifier
@@ -153,21 +153,21 @@ class ContactService {
         
     }
     
-    enum ServiceError: Error {
+    public enum ServiceError: Error {
         case notPermitted
     }
     
-    enum SortOption {
+    public enum SortOption {
         
         case alphabeticalByFamilyName
         
-        var sortingMethod: (key: Key, method: String) {
+        public var sortingMethod: (key: Key, method: String) {
             switch self {
             case .alphabeticalByFamilyName: return (.familyName, "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
             }
         }
         
-        func group(_ contacts: [Contact]) -> [ContactGroup] {
+        public func group(_ contacts: [Contact]) -> [ContactGroup] {
             var grouped: [ContactGroup] = []
             
             for char in sortingMethod.method {

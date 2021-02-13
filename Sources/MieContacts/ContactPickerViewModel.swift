@@ -10,20 +10,18 @@ import SwiftUI
 
 public class ContactPickerViewModel: ObservableObject {
     
-    @Published var contactList: [ContactGroup] = []
-    @Published var contacts: [Contact] = []
-    @Published var searchedContacts: [SearchedContact] = []
+    @Published public var contactList: [ContactGroup] = []
+    @Published public var contacts: [Contact] = []
+    @Published public var searchedContacts: [SearchedContact] = []
     
     public init() {
         
         self.contacts = ContactService.shared.fetch()
         self.contactList = ContactService.shared.group(contacts)
         
-        ContactService.shared.requestPermission()
-        
     }
     
-    func search(text: String) {
+    public func search(text: String) {
         
         if text == "" {
             searchedContacts = []
